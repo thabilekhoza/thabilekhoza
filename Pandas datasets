@@ -1,0 +1,32 @@
+import pandas as pd
+
+# Load the dataset into a DataFrame
+df = pd.read_csv('your_dataset.csv')
+
+# Display the first few rows of the dataset
+print("First 5 rows of the dataset:")
+print(df.head())
+
+# Display basic statistical details of the dataset
+print("\nStatistical details of the dataset:")
+print(df.describe())
+
+# Display information about the dataset
+print("\nInformation about the dataset:")
+print(df.info())
+
+# Check for missing values
+print("\nMissing values in the dataset:")
+print(df.isnull().sum())
+
+# Group data by a specific column and calculate the mean of another column (replace 'GroupColumn' and 'ValueColumn' with actual column names)
+grouped_data = df.groupby('GroupColumn')['ValueColumn'].mean()
+print("\nMean values grouped by 'GroupColumn':")
+print(grouped_data)
+
+# Plotting a histogram of a specific column (replace 'ColumnToPlot' with the actual column name)
+df['ColumnToPlot'].hist()
+plt.title('Histogram of ColumnToPlot')
+plt.xlabel('Values')
+plt.ylabel('Frequency')
+plt.show()
